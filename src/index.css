@@ -1,13 +1,91 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(
+    circle at 30px 30px,
+    #f7e09b,
+    #4682b4,
+    50%,
+    #b22222,
+    90%,
+    #f7e09b
+  );
+  height: 100vh;
+}
+
+.calculator {
+  height: 500px;
+  max-width: 500px;
+  border-radius: 10px;
+  background-image: url("https://i.pinimg.com/564x/69/26/62/6926623237edf2261c30351e23d78402.jpg");
+  padding: 1rem;
+  box-shadow: 2rem 2rem 1.5rem #000;
+}
+
+.keys {
+  gap: 8px;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.keys button:first-child {
+  color: #ffffff;
+  grid-column-end: 3;
+  grid-column-start: 1;
+  background-color: #b22222;
+}
+
+.keys button:nth-child(15) {
+  color: #ffffff;
+  grid-row: 4/6;
+  grid-column: 4/4;
+  background-color: #4682b4;
+}
+
+.keys button:nth-child(16) {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.output {
+  height: 120px;
+  background-color: #0a4d89ab;
+  padding: 10px;
+  margin: 15px;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.input,
+.result {
+  color: #ffffff;
+  height: 60px;
+  display: block;
+  font-size: 55px;
+  text-align: right;
+  padding-right: 5px;
+}
+
+button {
+  border: none;
+  font-size: 25px;
+  min-width: 100px;
+  min-height: 50px;
+  border-radius: 15px;
+  box-shadow: 5px 5px #000;
+  cursor: pointer;
+  transition: 0.3s linear;
+  opacity: 1;
+}
+
+button:hover {
+  transform: scale(1.1);
+  background: #ffd34f;
 }
