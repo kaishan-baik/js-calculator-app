@@ -1,3 +1,4 @@
+/* eslint-disable no-new-func */
 import React from "react";
 import { useEffect, useState } from "react";
 // import { calcData, operators, numbers } from "./data";
@@ -55,7 +56,7 @@ const App = () => {
   const [calculatorData, setCalculatorData] = useState("");
 
   const handleSubmit = () => {
-    const total = eval(calculatorData);
+    const total = Function("return " + calculatorData)();
     setInput(total);
     setOutput(`${total} = ${total}`);
     setCalculatorData(`${total}`);
@@ -173,7 +174,7 @@ const App = () => {
     }
   };
 
-  const handleOutput = () => {
+  const handleOutput = (calculatorData) => {
     setOutput(calculatorData);
   };
 
